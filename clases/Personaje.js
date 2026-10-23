@@ -1,4 +1,4 @@
-class Personaje {
+export class Personaje {
   #nombre;
   #edad;
   #vivo;
@@ -12,7 +12,16 @@ class Personaje {
     this.#casa = casa;
     this.#arma = arma;
   }
- 
+  //Metodos
+  presentacion(){
+    console.log(`Soy ${this.#nombre} de la Casa ${this.#casa}.`)
+  }
+
+  equiparArma(arma){
+    this.#arma = arma;
+    console.log(`${this.#nombre} ha equipado el arma ${this.#arma}.`)
+  }
+  //
   get nombre() {
     return this.#nombre;
   }
@@ -29,7 +38,7 @@ class Personaje {
  
   get vivo() {
     return this.#vivo;
-  }
+  } 
   set vivo(vivo) {
     this.#vivo = vivo;
   }

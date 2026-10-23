@@ -1,4 +1,4 @@
-class Reino {
+export class Reino {
   #nombre;
   #casas;
   #rey;
@@ -8,7 +8,28 @@ class Reino {
     this.#casas = casas;
     this.#rey = rey;
   }
- 
+  //Metodos
+  agregarCasa(casa){
+    this.#casas.push(casa);
+    console.log(`La Casa ${casa.nombre} ha sido añadida al Reino ${this.#nombre}.` )
+  }
+
+  proclamarRey(rey){
+    this.#rey = rey;
+    console.log(`${rey.nombre} ha sido proclamado rey de ${this.#nombre}`);
+  }
+
+  reyActual(){
+    console.log(`El rey actual es ${this.#rey.nombre} de la Casa ${this.#rey.casa.nombre}`);
+  }
+  
+  listarCasas(){
+    console.log(`Casas del Reino de ${this.#nombre}:\n`)
+    this.#casas.forEach(casa => {
+      console.log(`- Casa ${casa.nombre}\n`);
+    })
+  }
+  // Getter and Setter
   get nombre() {
     return this.#nombre;
   }
@@ -29,4 +50,5 @@ class Reino {
   set rey(rey) {
     this.#rey = rey;
   }
+  //
 }

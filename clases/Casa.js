@@ -1,4 +1,4 @@
-class Casa {
+export class Casa {
   #nombre;
   #lema;
   #miembros;
@@ -8,7 +8,25 @@ class Casa {
     this.#lema = lema;
     this.#miembros = miembros;
   }
- 
+
+  //Metodos
+  nuevoMiembro(miembro){
+    this.#miembros.push(miembro);
+    console.log(`${miembro.nombre} ha sido añadido a la Casa ${this.#nombre}`);
+  }
+
+  //Recorremos cada uno de los miembros con un forEach y visualizamos su nombre
+  listarMiembros(){
+    console.log(`Miembros de la Casa ${this.#nombre}:\n`)
+    this.#miembros.forEach(miembro => {
+      console.log(`- ${miembro.nombre}\n`);
+    })
+  }
+  //
+
+
+
+  //Getter and Setter
   get nombre() {
     return this.#nombre;
   }
@@ -29,4 +47,5 @@ class Casa {
   set miembros(miembros) {
     this.#miembros = miembros;
   }
+  //
 }

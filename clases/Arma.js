@@ -1,4 +1,4 @@
-class Arma {
+export class Arma {
   #nombre;
   #danio;
   #tipo;
@@ -8,7 +8,10 @@ class Arma {
     this.#danio = danio;
     this.#tipo = tipo;
   }
- 
+
+  descripcion(){
+    console.log(`${this.#nombre} (${this.#tipo}) - daño: ${this.#danio}`);
+  }
   get nombre() {
     return this.#nombre;
   }
