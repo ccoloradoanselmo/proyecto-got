@@ -8,27 +8,37 @@ export class Reino {
     this.#casas = casas;
     this.#rey = rey;
   }
-  //Metodos
+  // Metodos
+
+  // Agregamos una nueva casa al reino, casas es un array
   agregarCasa(casa){
     this.#casas.push(casa);
     console.log(`La Casa ${casa.nombre} ha sido añadida al Reino ${this.#nombre}.` )
   }
 
+
+  // Asignamos el nuevo rey
   proclamarRey(rey){
     this.#rey = rey;
-    console.log(`${rey.nombre} ha sido proclamado rey de ${this.#nombre}`);
+    console.log(`${rey.nombre} ha sido proclamado rey de ${this.#nombre}.`);
   }
 
   reyActual(){
-    console.log(`El rey actual es ${this.#rey.nombre} de la Casa ${this.#rey.casa.nombre}`);
+    console.log("Rey actual: \n");  
+    console.log(`El rey actual es ${this.#rey.nombre} de la Casa ${this.#rey.casa.nombre}.`);
   }
-  
+
+
+  // Recorremos con forEach las casa y visualizamos su nombre
   listarCasas(){
     console.log(`Casas del Reino de ${this.#nombre}:\n`)
     this.#casas.forEach(casa => {
       console.log(`- Casa ${casa.nombre}\n`);
     })
   }
+  //
+  
+
   // Getter and Setter
   get nombre() {
     return this.#nombre;

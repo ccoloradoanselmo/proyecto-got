@@ -12,16 +12,21 @@ export class Personaje {
     this.#casa = casa;
     this.#arma = arma;
   }
-  //Metodos
+  // Metodos
+
   presentacion(){
-    console.log(`Soy ${this.#nombre} de la Casa ${this.#casa}.`)
+    console.log(`Soy ${this.#nombre} de la Casa ${this.#casa.nombre}.`)
   }
 
+
+  // Le equipamos la nueva arma
   equiparArma(arma){
     this.#arma = arma;
-    console.log(`${this.#nombre} ha equipado el arma ${this.#arma}.`)
+    console.log(`${this.#nombre} ha equipado el arma ${this.#arma.nombre}.`)
   }
   //
+  
+  // Getter and Setter
   get nombre() {
     return this.#nombre;
   }

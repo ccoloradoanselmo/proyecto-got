@@ -8,10 +8,13 @@ export class Arma {
     this.#danio = danio;
     this.#tipo = tipo;
   }
+  //Metodos
 
   descripcion(){
     console.log(`${this.#nombre} (${this.#tipo}) - daño: ${this.#danio}`);
   }
+
+  //Getter and Setter
   get nombre() {
     return this.#nombre;
   }
