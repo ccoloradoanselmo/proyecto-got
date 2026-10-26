@@ -2,37 +2,38 @@ export class Arma {
   #nombre;
   #danio;
   #tipo;
- 
+
   constructor(nombre = "Sin nombre", danio = 0, tipo = "Desconocido") {
     this.#nombre = nombre;
     this.#danio = danio;
     this.#tipo = tipo;
   }
+
   //Metodos
 
-  descripcion(){
+  descripcion() {
     console.log(`${this.#nombre} (${this.#tipo}) - daño: ${this.#danio}`);
   }
 
   //Getter and Setter
-  get nombre() {
+  get getNombre() {
     return this.#nombre;
   }
-  set nombre(nombre) {
+  set setNombre(nombre) {
     this.#nombre = nombre;
   }
- 
-  get danio() {
+
+  get getDanio() {
     return this.#danio;
   }
-  set danio(danio) {
+  set setDanio(danio) {
     this.#danio = danio;
   }
- 
-  get tipo() {
+
+  get getTipo() {
     return this.#tipo;
   }
-  set tipo(tipo) {
+  set setTipo(tipo) {
     this.#tipo = tipo;
   }
 }

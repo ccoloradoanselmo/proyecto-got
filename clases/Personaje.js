@@ -4,61 +4,53 @@ export class Personaje {
   #vivo;
   #casa;
   #arma;
- 
-  constructor(nombre = "Desconocido", edad = 0, vivo = true, casa = null, arma = null) {
+
+  constructor(nombre = "Desconocido", edad = 0, vivo = true, casa = "Sin casa") {
     this.#nombre = nombre;
     this.#edad = edad;
     this.#vivo = vivo;
     this.#casa = casa;
-    this.#arma = arma;
   }
+
   // Metodos
 
-  presentacion(){
-    console.log(`Soy ${this.#nombre} de la Casa ${this.#casa.nombre}.`)
+  presentacion() {
+    console.log(`Soy ${this.#nombre} de la Casa ${this.#casa.getNombre}.`);
   }
 
-
-  // Le equipamos la nueva arma
-  equiparArma(arma){
-    this.#arma = arma;
-    console.log(`${this.#nombre} ha equipado el arma ${this.#arma.nombre}.`)
-  }
-  //
-  
   // Getter and Setter
-  get nombre() {
+  get getNombre() {
     return this.#nombre;
   }
-  set nombre(nombre) {
+  set setNombre(nombre) {
     this.#nombre = nombre;
   }
- 
-  get edad() {
+
+  get getEdad() {
     return this.#edad;
   }
-  set edad(edad) {
+  set setEdad(edad) {
     this.#edad = edad;
   }
- 
-  get vivo() {
+
+  get getVivo() {
     return this.#vivo;
-  } 
-  set vivo(vivo) {
+  }
+  set setVivo(vivo) {
     this.#vivo = vivo;
   }
- 
-  get casa() {
+
+  get getCasa() {
     return this.#casa;
   }
-  set casa(casa) {
+  set setCasa(casa) {
     this.#casa = casa;
   }
- 
-  get arma() {
+
+  get getArma() {
     return this.#arma;
   }
-  set arma(arma) {
+  set setArma(arma) {
     this.#arma = arma;
   }
 }

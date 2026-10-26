@@ -19,7 +19,7 @@ export class Casa {
 
   // Recorremos cada uno de los miembros con un forEach y visualizamos su nombre
   listarMiembros(){
-    console.log(`Miembros de la Casa ${this.#nombre}:\n`)
+    console.log(`Miembros de la Casa ${this.#nombre}:\n`);
     this.#miembros.forEach(miembro => {
       console.log(`- ${miembro.nombre}\n`);
     })
