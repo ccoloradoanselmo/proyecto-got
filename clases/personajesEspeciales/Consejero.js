@@ -1,3 +1,5 @@
+import { Personaje } from '/clases/Personaje.js';
+
 export class Consejero extends Personaje {
     #especialidad;
 
@@ -5,15 +7,15 @@ export class Consejero extends Personaje {
         super(nombre, edad, vivo, casa);
         this.#especialidad = especialidad;
     }
-    
+
     //Metodos
 
     luchar() {
-        console.log(`${this.nombre} no lucha con sus armas, sino con palabras e inteligencia.`);
+        console.log(`${this.getNombre} no lucha con sus armas, sino con palabras e inteligencia.`);
     }
 
     aconsejar(personaje) {
-        console.log(`${this.nombre} aconseja a ${personaje.nombre} sobre ${this.#especialidad}`);
+        console.log(`${this.getNombre} aconseja a ${personaje.getNombre} sobre ${this.#especialidad}.`);
     }
 
     //

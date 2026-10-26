@@ -1,9 +1,11 @@
+import { Rey } from '/clases/personajesEspeciales/Rey.js';
+
 export class Reino {
   #nombre;
   #casas;
   #rey;
 
-  constructor(nombre = "Sin nombre", casas = [], rey = null) {
+  constructor(nombre = "Sin nombre", casas = [], rey = "Sin rey") {
     this.#nombre = nombre;
     this.#casas = casas;
     this.#rey = rey;
@@ -19,7 +21,7 @@ export class Reino {
 
   // Preguntamos por el tipo de Clase utlizada en el objeto "rey", si no es la clase "Rey", no lo coronamos
   proclamarRey(rey) {
-    if (rey.constructor.name === "Rey") {
+    if (rey instanceof Rey) {
       this.#rey = rey;
       console.log(`${rey.getNombre} ha sido proclamado rey de ${this.#nombre}.`);
     } else if (rey.constructor.name === "Personaje") {

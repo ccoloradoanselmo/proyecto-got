@@ -1,3 +1,5 @@
+import { Personaje } from '/clases/Personaje.js';
+
 export class Rey extends Personaje{
     #aniosDeReinado;
 
@@ -9,13 +11,13 @@ export class Rey extends Personaje{
     //Metodos
 
      luchar(){
-        console.log(`${this.nombre} lidera la batalla y anima a sus tropas.`);
+        console.log(`${this.getNombre} lidera la batalla y anima a sus tropas.`);
     }
 
     gobernar(){
-        console.log(`${this.nombre} gobierna con sabiduría desde hace ${this.aniosDeReinado}`);
+        console.log(`${this.getNombre} gobierna con sabiduría desde hace ${this.#aniosDeReinado} años.`);
     }
-    
+
     //
 
     //Getter and Setter

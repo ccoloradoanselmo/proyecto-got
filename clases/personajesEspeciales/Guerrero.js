@@ -1,3 +1,5 @@
+import { Personaje } from '/clases/Personaje.js';
+
 export class Guerrero extends Personaje {
     #arma;
     constructor(nombre = "Desconocido", edad = 0, vivo = true, casa = null, arma = null) {
@@ -9,17 +11,17 @@ export class Guerrero extends Personaje {
 
     equiparArma(arma) {
         this.#arma = arma;
-        console.log(`${this.nombre} ha equipado el arma ${this.#arma.nombre}.`);
+        console.log(`${this.getNombre} ha equipado el arma ${this.#arma.getNombre}.`);
     }
 
     luchar(){
-        console.log(`${this.nombre} ataca con su ${this.#arma.nombre}, causando ${this.#arma.danio} puntos`);
+        console.log(`${this.getNombre} ataca con su ${this.#arma.getNombre}, causando ${this.#arma.getDanio} puntos de daño.`);
     }
 
     entrenar(){
-        console.log(`${this.nombre} entrena sin descanso para la próxima batalla.`);
+        console.log(`${this.getNombre} entrena sin descanso para la próxima batalla.`);
     }
-    
+
     //
 
     //Getter and Setter

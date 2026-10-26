@@ -3,7 +3,6 @@ export class Personaje {
   #edad;
   #vivo;
   #casa;
-  #arma;
 
   constructor(nombre = "Desconocido", edad = 0, vivo = true, casa = "Sin casa") {
     this.#nombre = nombre;
@@ -47,10 +46,4 @@ export class Personaje {
     this.#casa = casa;
   }
 
-  get getArma() {
-    return this.#arma;
-  }
-  set setArma(arma) {
-    this.#arma = arma;
-  }
 }
