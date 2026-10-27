@@ -1,10 +1,10 @@
 //Import de las clases
-import { Arma } from '/clases/Arma.js';
-import { Reino } from '/clases/Reino.js';
-import { Casa } from '/clases/Casa.js';
-import { Rey } from '/clases/personajesEspeciales/Rey.js';
-import { Guerrero } from '/clases/personajesEspeciales/Guerrero.js';
-import { Consejero } from '/clases/personajesEspeciales/Consejero.js';
+import { Arma } from 'clases/Arma.js';
+import { Reino } from 'clases/Reino.js';
+import { Casa } from 'clases/Casa.js';
+import { Rey } from 'clases/personajesEspeciales/Rey.js';
+import { Guerrero } from 'clases/personajesEspeciales/Guerrero.js';
+import { Consejero } from 'clases/personajesEspeciales/Consejero.js';
 
 
 //Instancias
