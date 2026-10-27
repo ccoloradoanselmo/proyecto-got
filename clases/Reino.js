@@ -1,4 +1,4 @@
-import { Rey } from './clases/personajesEspeciales/Rey.js';
+import { Rey } from './personajesEspeciales/Rey.js';
 
 export class Reino {
   #nombre;
