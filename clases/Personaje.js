@@ -17,6 +17,11 @@ export class Personaje {
     console.log(`Soy ${this.#nombre} de la Casa ${this.#casa.getNombre}.`);
   }
 
+  morir(){
+    this.#vivo = false;
+    console.log(`${this.#nombre} ha muerto.`);
+  }
+
   // Getter and Setter
   get getNombre() {
     return this.#nombre;
