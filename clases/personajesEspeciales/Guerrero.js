@@ -1,4 +1,5 @@
 import { Personaje } from '../Personaje.js';
+import { Caminante } from './Caminante.js';
 
 export class Guerrero extends Personaje {
     #arma;
@@ -26,12 +27,15 @@ export class Guerrero extends Personaje {
 
 
     atacar(objetivo) {
-        if (objetivo instanceof Guerrero) {
-            const daño = Math.floor(this.#arma.getDanio * (0.7 + Math.random() * 0.6)); // entre 70% y 130% del daño base
+        const daño = Math.floor(this.#arma.getDanio * (0.7 + Math.random() * 0.6)); // entre 70% y 130% del daño base
+        if (objetivo instanceof Caminante) {
+            console.log(`${this.getNombre} ataca a ${objetivo.getNombre} causando ${daño} puntos de daño`);
+            objetivo.recibirDaño(daño, this.#arma);
+        } else {
             console.log(`${this.getNombre} ataca a ${objetivo.getNombre} causando ${daño} puntos de daño`);
             objetivo.recibirDaño(daño);
-        }else
-            console.log("Solo puede atacar a un Guerrrero...");
+        }
+
 
     }
 

@@ -2,11 +2,13 @@ export class Arma {
   #nombre;
   #danio;
   #tipo;
+  #material;
 
-  constructor(nombre = "Sin nombre", danio = 0, tipo = "Desconocido") {
+  constructor(nombre = "Sin nombre", danio = 0, material = "acero", tipo = "Desconocido") {
     this.#nombre = nombre;
     this.#danio = danio;
     this.#tipo = tipo;
+    this.#material = material;
   }
 
   //Metodos
@@ -35,5 +37,13 @@ export class Arma {
   }
   set setTipo(tipo) {
     this.#tipo = tipo;
+  }
+
+  get getMaterial() {
+    return this.#material;
+  }
+
+  set setMaterial(material) {
+    this.#material = material;
   }
 }

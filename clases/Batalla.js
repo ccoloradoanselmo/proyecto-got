@@ -30,6 +30,21 @@ export class Batalla {
 
     }
 
+
+    lucha(guerrerosCasa1, guerrerosCasa2) {
+        while (guerrerosCasa1.some(x => x.getVivo) && guerrerosCasa2.some(x => x.getVivo)) {
+            const guerrerosVivosCasa1 = guerrerosCasa1.filter(x => x.getVivo);
+            const guerrerosVivosCasa2 = guerrerosCasa2.filter(x => x.getVivo);
+            const guerrero1 = guerrerosVivosCasa1[Math.random() * guerrerosVivosCasa1.length | 0];
+            const guerrero2 = guerrerosVivosCasa2[Math.random() * guerrerosVivosCasa2.length | 0];
+
+            // Decidimos quién ataca primero de forma aleatoria
+            if (Math.random() > 0.5)
+                this.enfrentamiento(guerrero1, guerrero2);
+            else
+                this.enfrentamiento(guerrero2, guerrero1);
+        }
+    }
     iniciarBatalla() {
 
         if (this.#casa1 !== this.#casa2) {
@@ -56,18 +71,7 @@ export class Batalla {
             console.log(guerrerosCasa2);
             //
 
-            // Enfrentamientos aleatorios, se sale del bucle hasta que no haya vivos en alguna de las dos casas
-            // Math.random() devuelve un numero aleatorio entre 0 y 1
-            // Al multiplicarlo por el tamaño del array, obtenemos por ejemplo, 2,789456
-            // Al poner | 0 lo trunca, es un pequeño truco
-            while (guerrerosCasa1.some(x => x.getVivo) && guerrerosCasa2.some(x => x.getVivo)) {
-                const guerrerosVivosCasa1 = guerrerosCasa1.filter(x => x.getVivo);
-                const guerrerosVivosCasa2 = guerrerosCasa2.filter(x => x.getVivo);
-                const guerrero1 = guerrerosVivosCasa1[Math.random() * guerrerosVivosCasa1.length | 0];
-                const guerrero2 = guerrerosVivosCasa2[Math.random() * guerrerosVivosCasa2.length | 0];
-                this.enfrentamiento(guerrero1, guerrero2);
-            }
-            //
+            lucha(guerrerosCasa1, guerrerosCasa2);
 
             // Comprobar ganador y visualizar
             if (guerrerosCasa1.some(x => x.getVivo)) {
@@ -81,6 +85,29 @@ export class Batalla {
         } else
             console.log("No puedes iniciar una batalla entre dos casas iguales...");
 
+    }
+
+    batallaFinal(casaStark, khaleesi, ejercitoCaminantes) {
+
+        this.#casa1 = new Casa("Ejercito de los Vivos", "La unión hace la fuerza", casaStark.getMiembros);
+        this.#casa2 = ejercitoCaminantes;
+
+        console.log("La Batalla Final que decidirá el destino de Poniente esta a punto de empezar...");
+
+        let guerrerosPoniente = this.#casa1.getMiembros.filter(x => x instanceof Guerrero);
+        guerrerosPoniente = guerrerosPoniente.concat(khaleesi.getArrayDragones);
+
+        const caminantesBlancos = this.#casa2.getMiembros;
+
+        this.lucha(guerrerosPoniente, caminantesBlancos);
+
+        if (guerrerosPoniente.some(x => x.getVivo)) {
+            console.log(`¡La batalla ha sido ganada por el Ejercito de los Vivos!`);
+            console.log(guerrerosPoniente);
+        } else {
+            console.log(`La batalla ha sido ganada por los Caminantes Blancos liderados por el Rey de la Noche...`);
+            console.log(caminantesBlancos);
+        }
     }
 
 
